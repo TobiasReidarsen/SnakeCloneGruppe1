@@ -9,35 +9,48 @@ namespace SnakeCloneGruppe1
 {
     public class DrawBoard
     {
-        public static void DrawBoard_()
+        public const int SizeX = 32; // widht
+        public const int SizeY = 32; // height
+        public const int TotalSize = SizeX * SizeY;
+        public const string wall = "# ";
+        public const string empty = "  ";
+
+        public static void DrawBoardFunc()
         {
-            int height = 7;
-            int width = 7;
-            char wall = '#';
-            int columnCount = height * width;
-            List<string> board = new List<string>();
+            //DrawSnake snake = new DrawSnake();
+            DrawSnake.InitSnake();
 
-            // wall = #
-
-            for (int i = 0; i < columnCount; i++)  // i står for width
+            for (int y = 1; y <= SizeY; y++)
             {
-                for (int j = 0; j < columnCount; j++)
+                for (int x = 1; x <= SizeX; x++)
                 {
-                    if (i == 0 || i == columnCount - 1)
+                    if ((x == 1) || (x == SizeY))
                     {
-                        Write(wall);
-                    } 
-                    else if (j == 0 || j == columnCount - 1)
-                    {
-                        Write(wall);
+                        if (DrawSnake.xInitialSnakePosition.Contains(x) && DrawSnake.xInitialSnakePosition.Contains(y))
+                        {
+                            Console.Write(DrawSnake.SNAKE_BODY);
+                        }
+                        else 
+                        {
+                            Console.Write(wall);
+                        }
                     }
                     else
                     {
-                        Write(' ');
+                        if ((y == 1) || (y == SizeX))
+                        {
+                            Console.Write(wall);
+                        }
+                        else
+                        {
+                            Console.Write(empty);
+                        }
                     }
+
                 }
-                WriteLine();
+                Console.Write("\n");
             }
+
         }
     }  
 }
