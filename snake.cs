@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace SnakeCloneGruppe1
 {
-    public class DrawSnake
+    public class snake
     {
         // make an initial position for snake
         // snake has initial size of 5
         // snake symbol is *
         public const string SNAKE_BODY = "X ";
-        public static int InitialSnakeLenght = 5;
+        public static int InitialSnakeLenght = 6;
         public static List<int> xInitialSnakePosition = new List<int>();
         public static List<int> yInitialSnakePosition = new List<int>();
 
@@ -21,7 +21,7 @@ namespace SnakeCloneGruppe1
             for (int i = 0; i < InitialSnakeLenght; i++)
             {
                 xInitialSnakePosition.Add(i);
-                yInitialSnakePosition.Add(i + 1);
+                yInitialSnakePosition.Add(i + 10);
             }
             Console.WriteLine(xInitialSnakePosition.Count);
         }

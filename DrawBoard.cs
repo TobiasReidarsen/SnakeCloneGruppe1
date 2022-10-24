@@ -18,7 +18,7 @@ namespace SnakeCloneGruppe1
         public static void DrawBoardFunc()
         {
             //DrawSnake snake = new DrawSnake();
-            DrawSnake.InitSnake();
+            snake.InitSnake();
 
             for (int y = 1; y <= SizeY; y++)
             {
@@ -26,9 +26,9 @@ namespace SnakeCloneGruppe1
                 {
                     if ((x == 1) || (x == SizeY))
                     {
-                        if (DrawSnake.xInitialSnakePosition.Contains(x) && DrawSnake.xInitialSnakePosition.Contains(y))
+                        if (snake.xInitialSnakePosition.Contains(x) && snake.xInitialSnakePosition.Contains(y))
                         {
-                            Console.Write(DrawSnake.SNAKE_BODY);
+                            Console.Write(snake.SNAKE_BODY);
                         }
                         else 
                         {
